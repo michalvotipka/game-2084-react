@@ -1,0 +1,27 @@
+
+html, body {
+  background-color: #faf8ef;
+  color: #776e65;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.app-wrapper {
+  margin: 0 auto;
+  width:100%;
+  text-align: center;
+  padding-bottom:30px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.space-right {
+  margin-right:10px;
+}
+
+.login-buttons-wrapper {
+  padding-top: 30px;
+}
+
