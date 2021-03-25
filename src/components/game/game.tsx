@@ -12,7 +12,7 @@ const initGame: Game = {state: initGameState, score: 0, finished: false};
 
 type GameCompProps = {}
 
-const GameComp: React.FC<GameCompProps> = ( ) => {
+const GameComp: React.FC<GameCompProps> = () => {
     const { loading, data } = useQuery(NEW_GAME);
     const [processGame] = useMutation(PROCESS_GAME);
 
@@ -28,10 +28,10 @@ const GameComp: React.FC<GameCompProps> = ( ) => {
 
       useEffect(() => {
         const onKeyup = (e: KeyboardEvent) => {
-            if (e.key === 'ArrowUp') return handleKeyPress("Up", data.newGame)
-            if (e.key === 'ArrowDown') return handleKeyPress("Down", data.newGame)
-            if (e.key === 'ArrowLeft') return handleKeyPress("Left", data.newGame)
-            if (e.key === 'ArrowRight') return handleKeyPress("Right", data.newGame)
+            if (e.key === 'ArrowUp') return handleKeyPress("Up")
+            if (e.key === 'ArrowDown') return handleKeyPress("Down")
+            if (e.key === 'ArrowLeft') return handleKeyPress("Left")
+            if (e.key === 'ArrowRight') return handleKeyPress("Right")
         }
 
         window.addEventListener('keyup', onKeyup);
@@ -39,7 +39,7 @@ const GameComp: React.FC<GameCompProps> = ( ) => {
       }, [gameData])
 
 
-      const handleKeyPress = async (direction: Direction, currentData: Game) => {
+      const handleKeyPress = async (direction: Direction) => {
         const currentGame: Game = {...gameData};
 
         //PROCEED
